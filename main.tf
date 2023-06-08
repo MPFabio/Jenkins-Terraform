@@ -131,11 +131,6 @@ resource "azurerm_linux_virtual_machine" "nginx" {
        storage_account_type = "Standard_LRS"
    }
 
-   tags = {
-       environment = var.environment
-       costcenter = "it"
-   }
-
    depends_on = [azurerm_resource_group.webserver]
 }
 
