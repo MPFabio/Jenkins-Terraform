@@ -1,17 +1,28 @@
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-fabio-random_pet"
+    use_oidc             = true
+    subscription_id      = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
+    tenant_id            = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
+  }
+}
+
+
+
 variable "resource_group_location" {
   default     = "westeurope"
   description = "Location of the resource group."
 }
 
 variable "resource_group_name_prefix" {
-  default     = "rg-fabio"
+  default     = "rg-fabio-"
   description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
 }
 
-variable "subscription_id" {
-   description = "Azure subscription"
-   default = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
-}
+#variable "subscription_id" {
+#   description = "Azure subscription"
+#   default = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
+#}
 
 #variable "client_id" {
 #   description = "Azure Client ID"
@@ -23,10 +34,10 @@ variable "subscription_id" {
 #   default = "lxk8Q~LfBuObGY4frVfc6B_e4Nqf6UMahS-BdaD-"
 #}
 
-variable "tenant_id" {
-   description = "Azure Tenant ID"
-   default = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
-} 
+#variable "tenant_id" {
+#   description = "Azure Tenant ID"
+#   default = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
+#} 
 
 terraform {
    required_version = ">= 0.12"
