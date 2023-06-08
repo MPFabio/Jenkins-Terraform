@@ -31,7 +31,7 @@
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh 'terraform apply plan.tf'' 
+                    sh 'terraform apply plan.tf' 
                 }    
             }
         } 
