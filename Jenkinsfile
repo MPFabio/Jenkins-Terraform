@@ -13,7 +13,7 @@ pipeline {
         stage ('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan -out fabio.tf'
+                    sh 'terraform plan'
                 }
             }
         }
