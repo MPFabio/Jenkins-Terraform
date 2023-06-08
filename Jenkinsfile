@@ -1,6 +1,15 @@
 pipeline {
     agent any
-
+    
+      stages {
+        stage ('Az Login') {
+            steps {
+                script {
+                    sh 'az login -u fmaratea.ext@simplonformations.onmicrosoft.com -p Angel-Sanctuary-the1'
+                }    
+            
+            }
+        }
     stages {
         stage ('Terraform Init') {
             steps {
