@@ -35,7 +35,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "webserver" {
-   name = "nginx-server-fabio-${var.environment}"
+   name = "server-fabio"
    location = var.location
 }
 
@@ -114,7 +114,7 @@ resource "azurerm_public_ip" "webserver_public_ip" {
 }
 
 resource "azurerm_network_interface" "webserver" {
-   name = "nginx-interface"
+   name = "interface"
    location = azurerm_resource_group.webserver.location
    resource_group_name = azurerm_resource_group.webserver.name
 
@@ -130,7 +130,7 @@ resource "azurerm_network_interface" "webserver" {
 
 resource "azurerm_linux_virtual_machine" "nginx" {
    size = var.instance_size
-   name = "nginx-webserver"
+   name = "webserver"
    resource_group_name = azurerm_resource_group.webserver.name
    location = azurerm_resource_group.webserver.location
    network_interface_ids = [
