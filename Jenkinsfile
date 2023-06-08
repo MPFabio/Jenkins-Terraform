@@ -19,7 +19,6 @@
             
             }
         }
-    }
     
         stage ('Terraform Plan -out plan.tf') {
             steps {
@@ -36,4 +35,5 @@
                 }    
             }
         } 
+    }    
 }
