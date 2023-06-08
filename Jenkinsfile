@@ -20,18 +20,18 @@
             }
         }
     
-        stage ('Terraform Plan -out plan.tf') {
+        stage ('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan'
+                    sh 'terraform plan -out plan.tf'
                 }
             }
         }
 
-        stage ('Terraform apply plan.tf') {
+        stage ('Terraform apply') {
             steps {
                 script {
-                    sh 'terraform apply -y' 
+                    sh 'terraform apply plan.tf'' 
                 }    
             }
         } 
