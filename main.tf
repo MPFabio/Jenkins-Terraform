@@ -3,20 +3,6 @@ variable "resource_group_location" {
   description = "Location of the resource group."
 }
 
-variable "resource_group_name_prefix" {
-  default     = "rg-fabio-"
-  description = "Prefix of the resource group name that's combined with a random ID so name is unique in your Azure subscription."
-}
-
-variable "subscription_id" {
-  description = "Azure subscription"
-  default = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
-}
-
-variable "tenant_id" {
-  description = "Azure Tenant ID"
-  default = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
-}
 
 terraform {
    required_version = ">= 0.12"
@@ -26,10 +12,10 @@ terraform {
 }
 
 provider "azurerm" {
-   subscription_id = var.subscription_id
+   subscription_id = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
    #client_id = var.client_id
    #client_secret = var.client_secret
-   tenant_id = var.tenant_id
+   tenant_id = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
    skip_provider_registration = true
    features {}
 }
