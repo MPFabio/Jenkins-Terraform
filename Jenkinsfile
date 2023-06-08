@@ -8,6 +8,7 @@ pipeline {
                     sh 'terraform init'
                 }    
             
+            }
         }
 
         stage ('Terraform Plan -out plan.tf') {
@@ -26,4 +27,4 @@ pipeline {
             }
         }
     }   
-}    
+}  
