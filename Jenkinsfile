@@ -13,7 +13,7 @@ pipeline {
         stage ('Terraform Plan') {
             steps {
                 script {
-                    sh 'terraform plan -out abcd.tf'
+                    sh 'terraform plan '
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         stage ('Terraform apply') {
             steps {
                 script {
-                    sh 'terraform apply abcd.tf' 
+                    sh 'terraform apply -auto-approve' 
                 }    
             }
         } 
