@@ -1,4 +1,4 @@
-pipeline {
+  pipeline {
     agent any
     
     stages {
@@ -20,7 +20,8 @@ pipeline {
             
             }
         }
-
+    }
+    
         stage ('Terraform Plan -out plan.tf') {
             steps {
                 script {
@@ -36,5 +37,6 @@ pipeline {
                 }    
             }
         }
-    }   
-}  
+       
+    }  
+}
