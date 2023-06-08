@@ -29,7 +29,7 @@
             }
         }
 
-        stage('Terraform apply') {
+        stage ('Terraform apply') {
             steps {
                 script {
                     sh 'terraform apply -y' 
