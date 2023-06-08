@@ -51,6 +51,7 @@ variable "subscription_id" {
 variable "tenant_id" {
    description = "Azure Tenant ID"
    default = "7349d3b2-951f-41be-877e-d8ccd9f3e73c"
+} 
 
 output "resource_group_name" {
   value = azurerm_resource_group.rg.name
