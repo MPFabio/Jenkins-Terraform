@@ -5,7 +5,7 @@ pipeline {
         stage ('Terraform Init') {
             steps {
                 script {
-                    sh 'sudo terraform init'
+                    sh 'sudo -i terraform init'
                 }    
             
             }
@@ -14,7 +14,7 @@ pipeline {
         stage ('Terraform Plan -out plan.tf') {
             steps {
                 script {
-                    sh 'sudo terraform plan'
+                    sh 'sudo -i terraform plan'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
         stage('Terraform apply') {
             steps {
                 script {
-                    sh 'sudo terraform apply -y' 
+                    sh 'sudo -i terraform apply -y' 
                 }    
             }
         }
