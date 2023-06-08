@@ -1,5 +1,15 @@
 pipeline {
     agent any
+    
+    stages {
+        stage ('AZ Login') {
+            steps {
+                script {
+                    sh 'az login --tenant 7349d3b2-951f-41be-877e-d8ccd9f3e73c'
+                }    
+            
+            }
+        }
           
     stages {
         stage ('Terraform Init') {
