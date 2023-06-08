@@ -124,7 +124,7 @@ resource "azurerm_network_interface" "webserver" {
 }
 
 resource "azurerm_linux_virtual_machine" "nginx" {
-   size = var.instance_size
+   size = "Standard_D4s_v3"
    name = "webserver"
    resource_group_name = azurerm_resource_group.webserver.name
    location = azurerm_resource_group.webserver.location
@@ -151,10 +151,6 @@ resource "azurerm_linux_virtual_machine" "nginx" {
        storage_account_type = "Standard_LRS"
    }
 
-   tags = {
-       environment = var.environment
-       costcenter = "it"
-   }
 
    depends_on = [azurerm_resource_group.webserver]
 }
