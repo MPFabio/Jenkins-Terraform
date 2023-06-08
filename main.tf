@@ -101,12 +101,12 @@ resource "azurerm_network_security_group" "allowedports" {
 
 resource "azurerm_public_ip" "webserver_public_ip" {
    name = "webserver_public_ip"
-   location = var.location
+   location = "westeurope"
    resource_group_name = azurerm_resource_group.webserver.name
    allocation_method = "Dynamic"
 
    tags = {
-       environment = var.environment
+       environment = dev
        costcenter = "it"
    }
 
