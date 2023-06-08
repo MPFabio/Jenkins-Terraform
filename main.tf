@@ -5,9 +5,11 @@ variable "resource_group_location" {
 
 
 terraform {
-   required_version = ">= 0.12"
    required_providers {
-      azurerm = ">3.0"
+      azurerm = {
+        source = "hashicorp/azurerm"
+        version = "3.59.0"
+      }  
    }
 }
 
