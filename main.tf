@@ -36,7 +36,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "webserver" {
    name = "server-fabio"
-   location = var.location
+   location = "westeurope"
 }
 
 
