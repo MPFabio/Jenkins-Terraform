@@ -10,8 +10,7 @@
             
             }
         }
-          
-    stages {
+  
         stage ('Terraform Init') {
             steps {
                 script {
@@ -36,7 +35,5 @@
                     sh 'terraform apply -y' 
                 }    
             }
-        }
-       
-    }  
+        } 
 }
