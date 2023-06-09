@@ -13,6 +13,8 @@ terraform {
    }
 }
 
+#az ad sp create-for-rbac --name azure-cli-fabio --role="Contributor" --scopes "/subscriptions/393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
+
 provider "azurerm" {
    subscription_id = "393e3de3-0900-4b72-8f1b-fb3b1d6b97f1"
    client_id = "2ac719ef-3f8b-45ad-b133-8d66e0919476"
